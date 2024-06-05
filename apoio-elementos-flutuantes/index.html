@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   nome<input id="texto" type="text">
+   
+   <button onclick="enviar_dados()" type="submit">Enviar</button>
+
+   <script>
+     
+     function enviar_dados(){
+      
+     var dados = document.getElementById('texto').value
+     
+     localStorage.setItem(dados, 'value');
+   
+        
+
+     }
+
+          
+   </script>
+
+   <script>
+      function pegar_usuario(callback){
+
+      window.setTimeout(function(){
+
+     var u = {
+     'nome':'cleuber',
+      'matricula':'B114398'
+     };
+     
+   callback(u)
+      
+},2000);
+
+}
+
+pegar_usuario(function(user){
+  console.log(user.nome + user.matricula)
+})
+
+
+   </script>
+
+</body>
+</html>
